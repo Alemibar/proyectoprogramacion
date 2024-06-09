@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Supermercado MiamorKEvin</title>
+
+  <style>
+    /* Estilos existentes */
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #f7dada; /* Cambiado a rosa palo */
+      color: #ff6b6b; /* Cambiado a rosa más intenso */
+      padding: 20px;
+      text-align: center;
+      margin-bottom: 30px; /* Aumentado el margen inferior */
+    }
+
+    h1 {
+      margin-top: 10px; /* Reducido el margen superior */
+      text-align: center;
+    }
+
+    main {
+      width: 80%;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    .testimonial {
+      background-color: #fcecec; /* Cambiado a rosa claro */
+      border-left: 6px solid #ff6b6b; /* Cambiado a rosa más intenso */
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .testimonial p {
+      font-style: italic;
+    }
+
+     .vacante {
+      background-color: #cdbecf; /* Cambiado a rosa claro */
+      border-left: 6px solid #674170; /* Cambiado a rosa más intenso */
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .vacante p {
+      font-style: italic;
+    }
+
+
+    .discount {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .discount h2 {
+      color: #ff6b6b; /* Cambiado a rosa más intenso */
+    }
+
+    .discount-note {
+      margin-bottom: 10px;
+    }
+
+    .button-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .button-container button {
+      background-color: #ff6b6b; /* Cambiado a rosa más intenso */
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+
+    .button-container button:hover {
+      background-color: #ff4d4d; /* Cambiado a tono más oscuro de rosa */
+    }
+
+    /* Nuevos estilos para los campos de registro */
+    input[type="text"],
+    input[type="password"],
+    input[type="email"] {
+      width: calc(100% - 20px);
+      padding: 10px;
+      border: none;
+      border-bottom: 2px solid #ff6b6b; /* Cambiado a rosa más intenso */
+      border-radius: 0;
+      margin-bottom: 20px;
+      transition: border-bottom 0.3s ease;
+    }
+
+    input[type="text"]:focus,
+    input[type="password"]:focus,
+    input[type="email"]:focus {
+      outline: none;
+      border-bottom: 2px solid #ff4d4d; /* Cambiado a tono más oscuro de rosa al enfocar */
+    }
+
+    /* Estilos para la línea decorativa */
+    .decoration-line {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 2px;
+      background-color: #ff6b6b; /* Cambiado a rosa más intenso */
+    }
+
+    .decoration-line:nth-child(2) {
+      top: 33%;
+    }
+
+    .decoration-line:nth-child(3) {
+      top: 66%;
+    }
+
+    .supermarket-sections {
+      position: relative;
+      margin-top: 20px;
+      padding-right: 10px;
+    }
+
+    .section {
+      margin-bottom: 20px;
+    }
+
+    .section h3 {
+      color: #ff6b6b; /* Cambiado a rosa más intenso */
+      margin-bottom: 10px;
+    }
+
+    /* Nuevo estilo para las imágenes de descuento */
+    .discount-img {
+      max-width: 100%;
+      display: block;
+      margin: 20px auto; /* Para centrar la imagen horizontalmente */
+    }
+
+    /* Estilos para la sección de vacantes */
+    .vacancy-section {
+      background-color: #f2f2f2;
+      padding: 20px;
+      margin-bottom: 30px;
+      border-radius: 10px;
+    }
+
+    .vacancy-section h2 {
+      color: #ff6b6b;
+      margin-bottom: 10px;
+    }
+
+    .vacancy-section p {
+      margin: 0;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      color: #ff6b6b;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"] {
+      width: calc(100% - 20px);
+      padding: 10px;
+      border: none;
+      border-bottom: 2px solid #ff6b6b;
+      border-radius: 0;
+      margin-bottom: 10px;
+      transition: border-bottom 0.3s ease;
+    }
+
+    .form-group input[type="text"]:focus,
+    .form-group input[type="email"]:focus {
+      outline: none;
+      border-bottom: 2px solid #ff4d4d;
+    }
+
+    .form-group input[type="submit"] {
+      background-color: #ff6b6b;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .form-group input[type="submit"]:hover {
+      background-color: #ff4d4d;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Supermercado MiamorKEvin</h1>
+    <div class="decoration-line"></div>
+    <div class="decoration-line"></div>
+    <div class="decoration-line"></div>
+  </header>
+
+  <main>
+
+        <div class="vacancy-section">
+      <h2>Registro</h2>
+      <form action="registro.php" method="POST">
+        <div class="form-group">
+          <label for="nombre">Nombre y Apellido:</label>
+          <input type="text" name="nombre" id="nombre" required />
+        </div>
+        <div class="form-group">
+          <label for="usuario">Nombre de Usuario:</label>
+          <input type="text" name="usuario" id="usuario" required />
+        </div>
+        <div class="form-group">
+          <label for="contraseña">Contraseña:</label>
+          <input type="password" name="contraseña" id="contraseña" required />
+        </div>
+        <!--<div class="form-group">
+          <label for="rep_contraseña">Repetir Contraseña:</label>
+          <input type="password" name="rep_contraseña" id="rep_contraseña" required />
+        </div>-->
+        <div class="form-group">
+          <input type="submit" name="enviar" value="Registrarse" />
+        </div>
+      </form>
+    </div>
+
+    <!-- Sección de testimonios -->
+    <div class="testimonial">
+      <h2>Historias de nuestros clientes</h2>
+      <p>¡Increíble variedad de productos y excelente atención al cliente!</p>
+    </div>
+
+    <!-- Sección de descuentos -->
+    <div class="discount">
+      <h2>Descuento especial</h2>
+      <div class="discount-note">
+        <h3>Carnes</h3>
+        <p>Descuento del 15% en todas las carnes frescas.</p>
+      </div>
+      <div class="discount-note">
+        <h3>Mariscos</h3>
+        
+        <p>Descuento del 10% en todos los mariscos.</p>
+      </div>
+      <div class="discount-note">
+        <h3>Verduras</h3>
+        <p>Descuento del 20% en todas las verduras frescas.</p>
+      </div>
+    </div>
+
+    <!-- Sección de vacantes -->
+    <div class="vacante">
+      <h2>Estamos buscando nuevo personal</h2>
+      <p>¡Si estas interesado no dudes en enviar tu solicitud, te contactaremos!</p>
+    </div>
+
+     <!-- Sección de vacantes -->
+    <div class="vacancy-section">
+  <h2>Solicitud de vacante</h2>
+  <form action="registro.php" method="POST">
+    <div class="form-group">
+      <label for="nombre">Nombre:</label>
+      <input type="text" name="Nombres" id="Nombres" required>
+    </div>
+    <div class="form-group">
+      <label for="apellido">Apellido:</label>
+      <input type="text" name="Apellidos" id="Apellidos" required>
+    </div>
+    <div class="form-group">
+      <label for="correo">Correo electrónico:</label>
+      <input type="email" name="Correo" id="Correo" required>
+    </div>
+    <div class="form-group">
+      <input type="submit" name="enviar" value="Enviar solicitud">
+    </div>
+  </form>
+</div>
+
+    <!-- Botones de navegación -->
+    <div class="button-container">
+      <button onclick="window.location.href = 'otra_pagina.html'">Ir a otra página</button>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>© 2024 Supermercado MiamorKEvin - Todos los derechos reservados</p>
+  </footer>
+</body>
+</html>
